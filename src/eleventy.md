@@ -341,12 +341,12 @@ You can write any command you'd put in the terminal here and give it a name howe
 Now that we've set up the foundations of our new Eleventy site it's time to upload it onto Nekoweb. In your terminal run the command <code>npx @11ty/eleventy</code> to build your project to its output folder.
 
 <details>
-  <summary>If your output folder is named something other than your Nekoweb site url/custom url open this</summary>
+  <summary>If your output folder is named something other than your Nekoweb site url/custom url</summary>
   <span>Go into your output folder and zip everything up. It has to be a zip not 7z or rar and make sure your zipped file doesn't have the output folder itself inside, just the contents of it. If you don't know how and you're on Windows you can select all the files, click "Send to" which should be in your right-click menu somewhere and select "Compressed (zipped) folder". Now go to your Nekoweb dashboard, go into the site you'd like to import into (not the root) and click "Import ZIP". Select your zipped output contents and you're done! Do bear in mind that any files currently on your Nekoweb site with the same names as those you're importing will be overwritten, so be sure to backup beforehand by clicking "Export ZIP" if you're worried about losing things.</span>
 </details>
 
 <details>
-  <summary>If your output folder is the name of your Nekoweb site url/custom url connected to your Nekoweb site open this</summary>
+  <summary>If your output folder is the name of your Nekoweb site url/custom url connected to your Nekoweb site</summary>
   <p>Go to your output folder and zip it up. It has to be a zip not 7z or rar and make sure your zipped file has the output folder itself inside. If you don't know how and you're on Windows you can select all the files, click "Send to" which should be in your right-click menu somewhere and select "Compressed (zipped) folder". Now go to your Nekoweb dashboard, go into your root and click "Import ZIP". Select your zipped output contents and you're done! Do bear in mind that any files currently on your Nekoweb site with the same names as those you're importing will be overwritten, so be sure to backup beforehand by clicking "Export ZIP" if you're worried about losing things.</p>
 </details>
 
