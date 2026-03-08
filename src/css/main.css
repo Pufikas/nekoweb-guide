@@ -182,7 +182,7 @@ header .lucide {
 .mainfl { display: flex;}
 
 nav {
-  min-width:var(--navaside);  
+  min-width:var(--navaside);
   z-index: 10;
   background: var(--creamish);
   height: calc(100dvh - var(--header-height));
@@ -190,7 +190,7 @@ nav {
 }
 
 #togglenav {
-  min-width:var(--navaside);  
+  min-width:var(--navaside);
   position: sticky;
   top: var(--header-height);
   filter: drop-shadow(1px 1px 2px var(--darkbrown));
@@ -280,11 +280,7 @@ main {
   height: calc(100dvh - var(--header-height));
   overflow-y:auto;
 }
-pre {
-  display: block;
-  width: 100%;
-  white-space: pre-wrap;
-}
+
 .main-pad-toggle, .main-pad { padding: 10px 10px 10px 30px; }
 
 .mobileafternav { display: none;}
@@ -332,6 +328,32 @@ pre {
   border-radius: 8px;
   background: #ffecd6;
   color: inherit;
+  display: block;
+  width: 100%;
+  white-space: pre-wrap;
+  /* so text cant overflow */
+  line-break: anywhere;
+}
+
+.note {
+  background-color: var(--creamish);
+  border: var(--dough) 3px ridge;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 18px;
+}
+
+.note > p {
+  margin: 0;
+}
+
+table, td, th {
+  border: var(--dough) 1px solid;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 @media only screen and (max-width: 500px) {

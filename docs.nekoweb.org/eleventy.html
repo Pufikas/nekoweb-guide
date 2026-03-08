@@ -123,7 +123,7 @@ function myFunction() {
 <main id="togglemain" class="main-pad">
   <h2 id="getting-started-with-eleventy%2F11ty" tabindex="-1">Getting started with Eleventy/11ty</h2>
 <p><i>Last updated: <span class="lastupd">January 18, 2026</span></i><br>
-<i>Author: <a class="lastupd" href="https://moosyu.github.io/">Moosyu</a></i></p>
+<i>Author: <a class="lastupd" href="https://moosyu.nekoweb.org/">Moosyu</a></i></p>
 <h2 id="disclaimer" tabindex="-1">Disclaimer</h2>
 <p>This guide assumes at least some basic knowledge of HTML and JS even though it's been written with the intention of being able to be understood by anyone. I highly recommend getting a grasp on common programming and HTML concepts before attempting to use a SSG. A terminal will also be used here, though all the commands needed will be told to you. This is being written primarily for Windows 10/11 users, if you're on Linux/Mac some instructions may have to be followed differently (mainly in the installation process).</p>
 <h2 id="overview" tabindex="-1">Overview</h2>
@@ -423,7 +423,11 @@ export default function (eleventyConfig) {
     };
 };
 </code></pre>
-<p>To test our new filter we can go to our blog layout and apply it to our content like <code>{{ content | uwuifyText | safe }}</code>. If your blog posts have been sufficiently uwuified you completed the process successfully (do note that if your blog post is only a couple words it may not trigger, have at least a little content in there). Now that we know how to use NPM packages we can remove uwuifier, first remove the filter from your layout, then remove the code adding the filter from your .eleventy.js before finally running the command <code>npm r uwuifier</code> to completely remove the package from your project. The &quot;r&quot; is shorthand for remove.</p>
+<p>To test our new filter we can go to our blog layout and apply it to our content like <code>{{ content | uwuifyText | safe }}</code>. If your blog posts have been sufficiently uwuified you completed the process successfully. Now that we know how to use NPM packages we can remove uwuifier, first remove the filter from your layout, then remove the code adding the filter from your .eleventy.js before finally running the command <code>npm r uwuifier</code> to completely remove the package from your project. The &quot;r&quot; is shorthand for remove.</p>
+<div class="note">
+<h4 id="note%3A" tabindex="-1">Note:</h4>
+<p>If you uwufied isn't working but you aren't getting errors try adding more words to your blog post, the issue may just be that there isn't enough text for uwuifier to work properly.</p>
+</div>
 <h2 id="adding-plugins---syntax-highlighting" tabindex="-1">Adding plugins - Syntax highlighting</h2>
 <p>Eleventy has an <a href="https://www.11ty.dev/docs/plugins/syntaxhighlight/">official syntax highlighting plugin</a> that allows code you've written in markdown to have it's syntax highlighted without any fuss or client JS. Firstly as this is a separate NPM package we'll need to run the command <code>npm i @11ty/eleventy-plugin-syntaxhighlight</code> inside of our Eleventy project folder to download it. Once installed import the package (I'll be setting its variable's name to <code>syntaxHighlight</code>) before putting <code>eleventyConfig.addPlugin(syntaxHighlight);</code> inside our export function. I'd expect your .eleventy.js file to look something like this if you're still using CommonJS:</p>
 <pre><code class="language-js">const syntaxHighlight = require(&quot;@11ty/eleventy-plugin-syntaxhighlight&quot;);
@@ -492,7 +496,7 @@ module.exports = function(eleventyConfig) {
     };
 };
 </code></pre>
-<p>That's all you need to do, now your built HTML will be minified. Do note that this won't minify any imported CSS or JS. The options you can choose <a href="https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference">are available on html-minify-terser's Github page</a>. My personal choice of options are in the code snippet. You can add or remove these options in the section of code where these are:</p>
+<p>That's all you need to do, now your built HTML will be minified. The options you can choose <a href="https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference">are available on html-minify-terser's Github page</a>. My personal choice of options are in the code snippet. You can add or remove these options in the section of code where these are:</p>
 <pre><code class="language-js">useShortDoctype: true,
 removeComments: true,
 collapseWhitespace: true,
@@ -500,7 +504,13 @@ minifyCSS: true,
 minifyJS: true
 </code></pre>
 <p>Make sure to add commas between the lines though or else you'll get an error.</p>
-<p>Note: this example was <a href="https://www.11ty.dev/docs/transforms/#minify-html-output">taken from the Eleventy docs</a>.</p>
+<div class="note">
+<h4 id="note%3A-1" tabindex="-1">Note:</h4>
+<p>This won't minify any imported CSS or JS, only that inside the HTML file itself.</p>
+</div>
+<div class="note">
+<h4 id="note%3A-2" tabindex="-1">Note:</h4>
+<p>This example was <a href="https://www.11ty.dev/docs/transforms/#minify-html-output">taken from the Eleventy docs</a>.</div></p>
 <h2 id="amendlibrary---markdown-footnotes" tabindex="-1">amendLibrary - Markdown footnotes</h2>
 <p>The amendLibrary method can be used to customize a library after it's been created by Eleventy prior to it being used to render your site. It's most often used for adding plugins to markdown-it, Eleventy's default markdown parser. For this example I'll be adding <a href="https://www.npmjs.com/package/markdown-it-footnote">markdown-it-footnote</a> however there any many popular choices. It might be worth your time to also check out <a href="https://www.npmjs.com/package/markdown-it-anchor">markdown-it-anchor</a> and VS Code's fork of <a href="https://www.npmjs.com/package/@vscode/markdown-it-katex">markdown-it-katex</a> as they're both pretty cool. The following instructions work for every markdown-it plugin I've tried so don't worry if you'd like to use another.</p>
 <p>Install markdown-it-footnote by running the command <code>npm i markdown-it-footnote</code> in your terminal to install the package before importing the package to our .eleventy.js file (I'll be setting its variable's name to <code>markdownItFootnote</code>). Inside of the exports section add:</p>
