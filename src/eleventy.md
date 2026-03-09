@@ -2,11 +2,11 @@
 title: Eleventy
 updated: 2026-01-18
 layout: /main.njk
-description: The Unofficial Nekoweb Documentaton
+description: Creating a site with 11ty
 ---
 ## Getting started with Eleventy/11ty
 *Last updated: <span class="lastupd">{{updated | formatDate}}</span>*
-*Author: <a class="lastupd" href="https://moosyu.github.io/">Moosyu</a>*
+*Author: <a class="lastupd" href="https://moosyu.nekoweb.org/">Moosyu</a>*
 
 ## Disclaimer
 
@@ -444,7 +444,13 @@ export default function (eleventyConfig) {
 };
 ```
 
-To test our new filter we can go to our blog layout and apply it to our content like {% raw %}<code>{{ content | uwuifyText | safe }}</code>{% endraw %}. If your blog posts have been sufficiently uwuified you completed the process successfully (do note that if your blog post is only a couple words it may not trigger, have at least a little content in there). Now that we know how to use NPM packages we can remove uwuifier, first remove the filter from your layout, then remove the code adding the filter from your .eleventy.js before finally running the command <code>npm r uwuifier</code> to completely remove the package from your project. The "r" is shorthand for remove.
+To test our new filter we can go to our blog layout and apply it to our content like {% raw %}<code>{{ content | uwuifyText | safe }}</code>{% endraw %}. If your blog posts have been sufficiently uwuified you completed the process successfully. Now that we know how to use NPM packages we can remove uwuifier, first remove the filter from your layout, then remove the code adding the filter from your .eleventy.js before finally running the command <code>npm r uwuifier</code> to completely remove the package from your project. The "r" is shorthand for remove.
+
+<div class="note">
+
+#### Note:
+If you uwufied isn't working but you aren't getting errors try adding more words to your blog post, the issue may just be that there isn't enough text for uwuifier to work properly.
+</div>
 
 ## Adding plugins - Syntax highlighting
 
@@ -530,7 +536,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-That's all you need to do, now your built HTML will be minified. Do note that this won't minify any imported CSS or JS. The options you can choose [are available on html-minify-terser's Github page](https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference). My personal choice of options are in the code snippet. You can add or remove these options in the section of code where these are:
+That's all you need to do, now your built HTML will be minified. The options you can choose [are available on html-minify-terser's Github page](https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference). My personal choice of options are in the code snippet. You can add or remove these options in the section of code where these are:
 
 ```js
 useShortDoctype: true,
@@ -542,7 +548,17 @@ minifyJS: true
 
 Make sure to add commas between the lines though or else you'll get an error.
 
-Note: this example was [taken from the Eleventy docs](https://www.11ty.dev/docs/transforms/#minify-html-output).
+<div class="note">
+
+#### Note:
+This won't minify any imported CSS or JS, only that inside the HTML file itself.
+
+</div>
+
+<div class="note">
+
+#### Note:
+This example was [taken from the Eleventy docs](https://www.11ty.dev/docs/transforms/#minify-html-output).</div>
 
 ## amendLibrary - Markdown footnotes
 

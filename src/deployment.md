@@ -2,11 +2,11 @@
 title: Deployment
 updated: 2026-01-19
 layout: /main.njk
-description: The Unofficial Nekoweb Documentaton
+description: Deploying your site to Nekoweb
 ---
 ## Deploying to Nekoweb
 *Last updated: <span class="lastupd">{{updated | formatDate}}</span>*
-*Authors: <a class="lastupd" href="https://jbc.lol/">JB</a> and <a class="lastupd" href="https://moosyu.github.io/">Moosyu</a>*
+*Authors: <a class="lastupd" href="https://jbc.lol/">JB</a> and <a class="lastupd" href="https://moosyu.nekoweb.org/">Moosyu</a>*
 
 ## Disclaimer
 Both tutorial deployment options will have the site you created following the [Eleventy guide](/eleventy) as an example but you can do this on all other SSGs/frameworks with zero or some slight modification to the guide. If you aren't using any SSG or framework you are also able to do the first deployment option and there are examples for doing so.
