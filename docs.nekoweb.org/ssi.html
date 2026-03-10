@@ -376,24 +376,25 @@ posts.filter(post =&gt; !post.isDirectory &amp;&amp; post.name.endsWith(&quot;.m
 </code></pre>
 <p>For the name displayed this script assumes at the start of every post you're doing <code># Post name</code> (though if you're up for it you can change the match accordingly depending on what you're doing). If you aren't or something went wrong and this value can't be found, the name of the file is used instead. The posts are sorted by date modified, however if you'd prefer date created you can just switch uses of <code>modified_time</code> to <code>created_time</code>. Be sure to also change the dir path in the list directive if your file with that script in it is placed somewhere differently to mine. If you want to edit how the list item looks you'll need to change the code the backticks on line 8.</p>
 <p>The final file structure of our project should look something along the lines of:</p>
-<p>│   index.html<br>
-│<br>
-├───includes<br>
-│       meta.html<br>
-│       navbar.html<br>
-│<br>
-├───layouts<br>
-│       base.html<br>
-│<br>
-├───pages<br>
-│       blog-posts.html<br>
-│<br>
-└───posts<br>
-post-1.md<br>
-post-2.md<br>
-post-3.md<br>
-post-4.md<br>
-_catchall.html</p>
+<pre><code>├───index.html
+│
+├───includes
+│       meta.html
+│       navbar.html
+│
+├───layouts
+│       base.html
+│
+├───pages
+│       blog-posts.html
+│
+└───posts
+        post-1.md
+        post-2.md
+        post-3.md
+        post-4.md
+        _catchall.html
+</code></pre>
 <p>If you'd like to view or download the project we created it's hosted at <a href="https://github.com/moosyu/nekoweb-ssi-example-project">github.com/moosyu/nekoweb-ssi-example-project</a>.</p>
 <h2 id="bonus-directives-that-didn%E2%80%99t-fit-in-naturally-(fsize%2C-follow-and-error)" tabindex="-1">Bonus directives that didn't fit in naturally (fsize, follow and error)</h2>
 <p>The <code>fsize</code> directive displays the size of the specified file and can be used like so: <code>&lt;!--# fsize file=&quot;&quot; --&gt;</code>. It has three attributes. The only required one is file which is the path to the file you want to display the size of. Like render only seems to display properly if you use an absolute path. The <code>unit</code> attribute is optional and defaults to auto and bases its choice on the whether the file's size is closest to a byte, kilobyte, megabyte or gigabyte. You can also manually specify the unit with <code>unit=&quot;&quot;</code>, b (byte), kb (kilobyte), mb (megabyte), gb (gigabyte) or auto. The final attribute is <code>format</code> which is optional and a boolean, if true the number returned has commas added as group separators.</p>

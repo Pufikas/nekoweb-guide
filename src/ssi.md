@@ -279,7 +279,8 @@ For the name displayed this script assumes at the start of every post you're doi
 
 The final file structure of our project should look something along the lines of:
 
-│   index.html
+```
+├───index.html
 │
 ├───includes
 │       meta.html
@@ -297,6 +298,7 @@ The final file structure of our project should look something along the lines of
         post-3.md
         post-4.md
         _catchall.html
+```
 
 If you'd like to view or download the project we created it's hosted at [github.com/moosyu/nekoweb-ssi-example-project](https://github.com/moosyu/nekoweb-ssi-example-project).
 
