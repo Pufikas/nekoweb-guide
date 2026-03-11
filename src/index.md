@@ -12,4 +12,4 @@ Have something you think should be added to the docs? Please use the [contact fo
 If you would like to add something (either to one of these topics or add something new), you can contact me on the Nekoweb discord, or by using my contact form but leaving a discord username that I can contact back to, to discuss what you'd like to add! In terms of addinng anything, <a href="https://github.com/fleuraward/nekoweb-guide">the repo for this page is public</a> in which you can submit a pull request!
 ## Update log
 Please note this update log was only added on the 9th of March, 2026 and thus will only include updates following this date and will not log previous updates.
-- **March 3, 2026** - SSI article by Moosyu and Rice added. Removed creator link in navigation bar as it was useless and migrated that to the credits section.
+- **March 11, 2026** - SSI article by Moosyu and Rice added. Removed creator link in navigation bar as it was useless and migrated that to the credits section.
