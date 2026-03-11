@@ -1,6 +1,6 @@
 ---
 title: Credits
-updated: 2025-11-16
+updated: 2025-3-11
 layout: /main.njk
 description: The Unofficial Nekoweb Documentation
 ---
