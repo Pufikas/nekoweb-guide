@@ -14,4 +14,5 @@ If you would like to contribute, feel free to contact me [through my contact for
 - [June](https://layercake.moe/) - Creator of Nekoweb Docs, Wrote both [getting](/getting-around/dashboard) [around](/getting-around/elements-css) sections, proofreads each article before addition
 - [Moosyu](https://moosyu.nekoweb.org/) - Wrote the [eleventy guide](/eleventy), the [SSI guide](/ssi) and section on the [deployment guide](/deployment#using-deploy2nekoweb)
 - [JB](https://jbc.lol/) - Wrote the [deployment guide](/deployment)
-- [rice](https://rice.place/) - Helped with the [SSI guide](/ssi)
+- [Rice](https://rice.place/) - Helped with the [SSI guide](/ssi)
+- [Nongmotrash](https://nongmotrash.net/) - Helped with the [elements css](/getting-around/elements-css) section

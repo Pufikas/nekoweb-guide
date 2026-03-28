@@ -121,13 +121,69 @@ function myFunction() {
 </div>
 <main id="togglemain" class="main-pad">
   <h1 id="getting-started---elements.css%2C-the-sitebox-and-the-postbox" tabindex="-1">Getting started - Elements.css, the sitebox and the postbox</h1>
-<p><i>Last updated: <span class="lastupd">February 23, 2026</span></i></p>
-<p><b>elements.css</b> is used for both your sitebox and your postbox. Your sitebox is the box on the explore page that can be customised to look how you want, while the postbox is the box your posts sit on in <a href="https://nekoweb.org/feed">the nekoweb feed</a>. The elements.css file has an image size restriction of 1MB, please make sure that your images are compressed and/or resized to appropriate sizes so it works in elements.css. If any of your images within your sitebox doesn't load, your css is reversed to default. Please also note that elements.css is rather restricted in what it allows, below is a list of things that do not work in elements.css:</p>
+<p><i>Last updated: <span class="lastupd">March 20, 2026</span></i></p>
+<p>A unique feature of nekoweb is being able to customize the preview of your website on the explore page, this is called the sitebox. You are also able to customize the postbox which holds your RSS posts on <a href="https://nekoweb.org/feed">the nekoweb feed</a> and the follow iframe which you can add to your site.</p>
+<img src="/assets/getting-started/added-image-sitebox.png" alt="a screennshot of my sitebox, in the top right corner it has a logo added onto it">
+<p>You do not define the HTML for either of these. Customization is done through a special stylehsheet called <b>elements.css</b> which is used for both your sitebox and your postbox, with heavy use of the CSS <code>content</code> property to modify the elements that are already there.</p>
+<div class="note">
+<h4 id="previewing-your-sitebox-and-postbox" tabindex="-1">Previewing your sitebox and postbox</h4>
+<p>While you can simply search your name on the explore page and reload everytime you make a change, there is <a href="https://jbc.lol/utils/nekobox/">an unofficial testing space for your elements.css configiration hosted by jb</a>. This let's you see the effects of your changes instantly which is very nice. Be warned though, it doesn't test to check for the image limits (at least as of writing).</p>
+</div>
+<h1 id="restrictions" tabindex="-1">Restrictions</h1>
+<p>The biggest restriction with elements.css is that image size is limited to 1MB, please make sure that your images are compressed and/or resized to appropriate sizes so it works in elements.css. If any of your images within your sitebox doesn't load, your css is reversed to default.</p>
+<p>Additionally, there's several CSS features that are restricted:</p>
 <ul>
-<li>any custom fonts (aka @font-face)</li>
-<li>animations using @keyframes</li>
+<li>any custom fonts (aka <code>@font-face</code>)</li>
+<li>animations using <code>@keyframes</code></li>
 </ul>
-<p>The default elements.css file can be found below:</p>
+<h1 id="customizing-the-site-box" tabindex="-1">Customizing the site box</h1>
+<p>As mentioned in the file itself, changing aspects in the sitebox must start with using the class <code>.site-box</code>.  There is a second alternative method to add a follow link to your site, as well. This is by using an a href link to 'https://nekoweb.org/follow/username.nekoweb.org', which will redirect you to a page asking if you would like to follow that user. If you use a custom domain, you should use that in place of the nekoweb subdomain.</p>
+<h2 id="the-preview-screenshot" tabindex="-1">The preview screenshot</h2>
+<p>The default sitebox takes a screenshot of your website to use as a preview, selectable with <code>.site-box .sitefeature</code>. If desired, you can hide this with the following code:</p>
+<pre><code>.site-box .sitefeature {
+    display: none;
+}
+</code></pre>
+<h2 id="linking-to-images" tabindex="-1">Linking to images</h2>
+<p>You add images to your sitebox by linking to ones on your site, but the URL looks a little funky:</p>
+<pre><code class="language-css">url(&quot;https://USERNAME.nekoweb.org/USERNAME.nekoweb.org/PATH-TO-YOUR-IMAGE.png&quot;)
+</code></pre>
+<p>If you instead have a custom domain, change the <i>second</i> domain in the URL:</p>
+<pre><code class="language-css">url(&quot;https://USERNAME.nekoweb.org/YOUR-CUSTOM-DOMAIN/PATH-TO-YOUR-IMAGE.png&quot;)
+</code></pre>
+<p>(The reason it works like this is because a single account can have multiple websites).</p>
+<h2 id="the-follow-button" tabindex="-1">The follow button</h2>
+<p>There's two different components to the follow button. <code>.follow</code> selects specifically the follow iframe (which can also be used to add a follow button to your site):</p>
+<pre><code class="language-html">&lt;iframe src=&quot;https://nekoweb.org/frame/follow&quot; frameborder=&quot;0&quot; width=&quot;170&quot; height=&quot;28&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p>Meanwhile, <code>.site-box .follow</code> is used to customise the follow symbol on your sitebox, which is shown as a [+] by default.<br>
+You can instead make it into an image like so:</p>
+<pre><code>.site-box .follow {
+    content: url (&quot;image url&quot;);
+    top: 10px;
+    left: 10px;
+    padding: 0px;
+}
+</code></pre>
+<p>The <code>top</code> and <code>left</code> can be used to adjust the placement of the image.</p>
+<h2 id="adding-extra-images" tabindex="-1">Adding extra images</h2>
+<p>Because we cannot modify the HTML to add new elements, you must instead rely on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Pseudo-elements">pseudo-elements</a> for extra images. Make use of the <code>::before</code> and <code>::after</code> pseudo-elements, and use the <code>content</code> to assign them an image. For example:</p>
+<pre><code class="language-css">.site-box::after {
+    content: url(&quot;image url&quot;);
+    position: absolute;
+    background-size: contain;
+    top: -30px; /* for placement */
+    right: 160px;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+}
+</code></pre>
+<h1 id="customizing-the-post-box" tabindex="-1">Customizing the post box</h1>
+<p>Work in progress section, refer to the default elements.css for guidance.</p>
+<p>All aspects changing the postbox must start using the class <code>.post-box</code>. For a guide on how to set up an rss feed and thus utilise the postbox, you can see <a href="https://help.joo.sh/rss">Joosh's RSS Tutorial</a>.</p>
+<h1 id="the-default-elements.css" tabindex="-1">The default elements.css</h1>
+<p>For your reference.</p>
 <pre><code>/*
     Don't use this file to edit your site style! Create a different CSS file for that.
     This file defines how custom elements (like sitebox) will look like.
@@ -172,36 +228,6 @@ function myFunction() {
     margin-bottom: 0px;
 }
 </code></pre>
-<p>As mentioned in the file itself, changing aspects in the sitebox must start with using the class <code>.site-box</code> and all aspects changing the postbox must start using the class <code>.post-box</code>. For a guide on how to set up an rss feed and thus utilise the postbox, you can see <a href="https://help.joo.sh/rss">Joosh's RSS Tutorial</a>. It is also important to note the difference in <code>.follow</code> and the follow button on your sitebox, edited with <code>.site-box .follow</code>, .follow is used specifically for the follow iframe (implemented with <code>&lt;iframe src=&quot;https://nekoweb.org/frame/follow&quot; frameborder=&quot;0&quot; width=&quot;170&quot; height=&quot;28&quot;&gt;&lt;/iframe&gt;</code>), this is a customisable iframe that adds the follow button to your site. Meanwhile, .site-box .follow is used to customise the follow symbol on your sitebox, this is originally shown as the [+] symbol. There is a second alternative method to add a follow link to your site, as well. This is by using an a href link to 'https://nekoweb.org/follow/username.nekoweb.org', which will redirect you to a page asking if you would like to follow that user. If you use a custom domain, you should use that in place of the nekoweb subdomain.</p>
-<p>Below are some quick common codes that are frequently asked for to hide sections of the sitebox.</p>
-<p>Hiding the website screenshot on sitebox:</p>
-<pre><code>.site-box .sitefeature {
-    display: none;
-}
-</code></pre>
-<p>Making the follow &quot;[+]&quot; button an image:</p>
-<pre><code>.site-box .follow {
-content: url (&quot;image url&quot;);
-top: 10px;
-left: 10px;
-padding: 0px;
-}
-</code></pre>
-<p>the top and left can be used to adjust the placement of the image.</p>
-<p>Adding extra images to your site-box can be done with the use of ::before and ::after in css, below is an example of how I added the logo to the sitebox for my main site:</p>
-<pre><code>.site-box::after {
-    content: url(image url);
-    position: absolute;
-    background-size: contain;
-    top: -30px;
-    right: 160px;
-    width: 10px;
-    height: 10px;
-    z-index: 1;
-}
-</code></pre>
-<img src="/assets/getting-started/added-image-sitebox.png" alt="a screennshot of my sitebox, in the top right corner it has a logo added onto it">
-<p>Additionally, there is <a href="https://jbc.lol/utils/nekobox/">an unofficial testing space for your elements.css configiration hosted by jb</a>, while it doesn't test to check for the image limits (at least as of writing), it is good resource to adjust how your sitebox and postbox look.</p>
 
 </main>
 </div>

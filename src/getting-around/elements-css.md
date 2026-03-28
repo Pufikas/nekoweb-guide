@@ -7,7 +7,7 @@ description: The Unofficial Nekoweb Documentaton
 # Getting started - Elements.css, the sitebox and the postbox
 *Last updated: <span class="lastupd">{{updated | formatDate}}</span>*
 
-A unique feature of nekoweb is being able to customize the preview of your website on the explore page, called the sitebox, as well as the postbox for your RSS posts on [the nekoweb feed](https://nekoweb.org/feed).
+A unique feature of nekoweb is being able to customize the preview of your website on the explore page, this is called the sitebox. You are also able to customize the postbox which holds your RSS posts on [the nekoweb feed](https://nekoweb.org/feed) and the follow iframe which you can add to your site.
 
 <img src="/assets/getting-started/added-image-sitebox.png" alt="a screennshot of my sitebox, in the top right corner it has a logo added onto it">
 
@@ -27,7 +27,6 @@ Additionally, there's several CSS features that are restricted:
 
 - any custom fonts (aka `@font-face`)
 - animations using `@keyframes`
-
 
 # Customizing the site box
 
@@ -139,4 +138,4 @@ For your reference.
     margin-top: 10px;
     margin-bottom: 0px;
 }
-`
+```

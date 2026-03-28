@@ -10,7 +10,11 @@ I've had this idea for a while, even predating it being a suggestion by the mode
 ## I have a suggestion!
 Have something you think should be added to the docs? Please use the [contact form on my main website](https://layercake.moe/contact) outlining what you would like added, please know I only write guides on things I am somewhat confident in my understanding of, and thus your suggestion may be rejected if it is something I am not sure I can write about
 ## How can I help?
-If you would like to add something (either to one of these topics or add something new), you can contact me on the Nekoweb discord, or by using my contact form but leaving a discord username that I can contact back to, to discuss what you'd like to add! In terms of adding anything, <a href="https://github.com/fleuraward/nekoweb-guide">the repo for this page is public</a> in which you can submit a pull request!
+If you would like to add something (either to one of these topics or add something new), you can contact me on the Nekoweb discord, or by using my contact form and leaving a discord username or email that I can respond back to, to discuss what you'd like to add! In terms of adding anything, <a href="https://github.com/fleuraward/nekoweb-guide">the repo for this page is public</a> in which you can submit a pull request!
+<div class="note"> <b> Please note:</b> Currently all my focus goes to IRL matters and thus I may be a little slow with updating things, please feel free to use my contact form on my main website to send a message if you are unsure if I have seen something! Thank you. </div>
+
 ## Update log
 Please note this update log was only added on the 9th of March, 2026 and thus will only include updates following this date and will not log previous updates.
+- **March 28, 2026** - Nongmotrash helped reformat the elements.css page to be more readable.
+- **March 22, 2026** - Nekoweb docs now has a customized sitebox.
 - **March 11, 2026** - SSI article by Moosyu and Rice added. Removed creator link in navigation bar as it was useless and migrated that to the credits section.
