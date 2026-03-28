@@ -6,6 +6,7 @@ description: The Unofficial Nekoweb Documentaton
 ---
 # Getting started - Elements.css, the sitebox and the postbox
 *Last updated: <span class="lastupd">{{updated | formatDate}}</span>*
+*Author: <a class="lastupd" href="https://layercake.moe/">June</a> and <a class="lastupd" href="https://nongmotrash.net/">Nongmotrash</a>*
 
 A unique feature of nekoweb is being able to customize the preview of your website on the explore page, this is called the sitebox. You are also able to customize the postbox which holds your RSS posts on [the nekoweb feed](https://nekoweb.org/feed) and the follow iframe which you can add to your site.
 

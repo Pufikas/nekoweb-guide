@@ -6,6 +6,7 @@ description: The Unofficial Nekoweb Documentation
 ---
 # Getting started - Exploring Nekoweb Dashboard and Settings
 *Last updated: <span class="lastupd">{{updated | formatDate}}</span>*
+*Author: <a class="lastupd" href="https://layercake.moe/">June</a>
 
 Nekoweb, especially for those who haven't used a website host before, may be hard to get around, this will cover a basic guide to how to navigate the website and a bunch of information on general Nekoweb features. Please note that Nekoweb is under active development, and depending on when you have made your account and if you have migrated it to the new routing system (released on 26th July, 2025) there may be some issues. This guide focuses on newer accounts and assumes migration to the current routing system.
 
